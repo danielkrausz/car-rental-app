@@ -13,6 +13,7 @@ public enum CarRentService {
   // 1
   // 2
   case login
+  case customers
     
 }
 
@@ -28,6 +29,7 @@ extension CarRentService: TargetType {
   public var path: String {
     switch self {
     case .login: return "/login/admin"
+    case .customers: return "/customers"
     }
   }
 
@@ -35,6 +37,7 @@ extension CarRentService: TargetType {
   public var method: Moya.Method {
     switch self {
     case .login: return .get
+    case .customers: return .get
     }
   }
     
@@ -46,6 +49,8 @@ extension CarRentService: TargetType {
   public var task: Task {
     switch self {
     case .login:
+        return .requestPlain
+    case .customers:
         return .requestPlain
     }
   }
