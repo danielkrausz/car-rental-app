@@ -9,17 +9,16 @@
 import Foundation
 import Moya
 
-public enum AdminLoginRequest {
+public enum CarRentService {
   // 1
-  static private let username = ""
-  static private let password = ""
-
   // 2
   case login
+    
 }
 
 
-extension AdminLoginRequest: TargetType {
+extension CarRentService: TargetType {
+    
   // 1
   public var baseURL: URL {
     return URL(string: "https://penzfeldobas.herokuapp.com")!
@@ -28,7 +27,7 @@ extension AdminLoginRequest: TargetType {
   // 2
   public var path: String {
     switch self {
-    case .login: return "/admin/login"
+    case .login: return "/login/admin"
     }
   }
 
@@ -38,21 +37,17 @@ extension AdminLoginRequest: TargetType {
     case .login: return .get
     }
   }
-
-  // 4
-  public var sampleData: Data {
-    return Data()
-  }
+    
+    public var sampleData: Data {
+        return Data()
+    }
 
   // 5
   public var task: Task {
     switch self {
     case .login:
-        //TODO
-        return .requestParameters(parameters: <#T##[String : Any]#>, encoding: <#T##ParameterEncoding#>)
+        return .requestPlain
     }
-    
-    return .requestPlain // TODO
   }
 
   // 6

@@ -47,25 +47,35 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDb-2O-cg8">
-                                        <rect key="frame" x="137.5" y="176" width="70" height="56"/>
+                                        <rect key="frame" x="97.5" y="193" width="150" height="37"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="MRW-bF-ERB"/>
-                                            <constraint firstAttribute="height" constant="56" id="tfW-HB-dSe"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="139" id="M4B-7M-vy0"/>
+                                            <constraint firstAttribute="width" constant="150" id="MRW-bF-ERB"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="Rtw-Uf-d9a"/>
+                                            <constraint firstAttribute="height" constant="37" id="tfW-HB-dSe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Login"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="LOGIN"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="LoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N9q-1P-G8K"/>
-                                            <action selector="LoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2SI-HQ-jpZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="bDb-2O-cg8" secondAttribute="bottom" constant="37" id="52C-Sk-LbH"/>
+                                    <constraint firstItem="bDb-2O-cg8" firstAttribute="top" secondItem="iMH-mv-RzA" secondAttribute="bottom" constant="38" id="Qs6-oK-41a"/>
                                     <constraint firstItem="bDb-2O-cg8" firstAttribute="centerX" secondItem="JaB-Sm-VPX" secondAttribute="centerX" id="QwW-fV-OrN"/>
                                     <constraint firstItem="iMH-mv-RzA" firstAttribute="top" secondItem="JaB-Sm-VPX" secondAttribute="top" constant="26" id="Zm7-N6-BH8"/>
                                     <constraint firstItem="iMH-mv-RzA" firstAttribute="leading" secondItem="JaB-Sm-VPX" secondAttribute="leading" constant="25" id="c8c-mE-y4P"/>
-                                    <constraint firstItem="bDb-2O-cg8" firstAttribute="top" secondItem="iMH-mv-RzA" secondAttribute="bottom" constant="21" id="cKM-q7-bqm"/>
+                                    <constraint firstItem="bDb-2O-cg8" firstAttribute="top" secondItem="iMH-mv-RzA" secondAttribute="bottom" constant="38" id="cKM-q7-bqm"/>
                                     <constraint firstAttribute="trailing" secondItem="iMH-mv-RzA" secondAttribute="trailing" constant="26" id="jMw-HK-oZc"/>
                                     <constraint firstAttribute="bottom" secondItem="iMH-mv-RzA" secondAttribute="bottom" constant="112" id="wUz-G2-qCg"/>
                                 </constraints>

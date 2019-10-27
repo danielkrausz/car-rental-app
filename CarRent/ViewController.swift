@@ -10,7 +10,7 @@ import UIKit
 import Moya
 
 class ViewController: UIViewController {
-    let provider = MoyaProvider<AdminLoginRequest>()
+    let provider = MoyaProvider<CarRentService>()
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -35,66 +35,46 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
 
 
     @IBAction func LoginAction(_ sender: Any) {
-        
-        let email = emailTextField.text
+        let user = emailTextField.text
         let password = passwordTextField.text
-        
-        if (email == "" || password == "") {
-            return
-        }
-        
-        ExecLogin(email!, password!)
-    }
-    
-    
-    func ExecLogin(_ email: String,_ pass: String) {
-        let url = NSURL(string: "https://penzfeldobas.herokuapp.com/login/admin")
-        
-        let request = NSMutableURLRequest(url: url! as URL)
-        
-        let username = email
-        let password = pass
-        let loginString = "\(username):\(password)"
-        
-        print("user: \(username)  |  password: \(password)")
 
-        guard let loginData = loginString.data(using: String.Encoding.utf8) else {
-            return
-        }
-        let base64LoginString = loginData.base64EncodedString()
-
-        request.httpMethod = "POST"
-        request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-       
-        let task = URLSession.shared.dataTask(with: request as URLRequest) {
-            (data, response, error) -> Void in
-            if let unwrappedData = data {
+        
+        
+        let provider = MoyaProvider<CarRentService>(plugins: [CredentialsPlugin { _ -> URLCredential? in
+            return URLCredential(user: user!, password: password!, persistence: .none)
+          }
+        ])
+        
+       provider.request(.login) { result in
+           switch result {
+           case let .success(moyaResponse):
+               let data = moyaResponse.data // Data, your JSON response is probably in here!
+               let statusCode = moyaResponse.statusCode // Int - 200, 401, 500, etc
                
-                do {
-                    let tokenDictionary:NSDictionary = try JSONSerialization.jsonObject(with: unwrappedData, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
-                   
-                    let token = tokenDictionary["access_token"] as? String
-                }
-                catch {
-                    self.emailTextField.text = ""
-                    self.passwordTextField.text = ""
-                   
-                    let alertView = UIAlertController(title: "Login failed",
-                                                      message: "Wrong username or password." as String, preferredStyle:.alert)
-                    let okAction = UIAlertAction(title: "Try Again!", style: .default, handler: nil)
-                    alertView.addAction(okAction)
-                    self.present(alertView, animated: true, completion: nil)
-                    return
-                }
-            }
-        }
-        task.resume()
+                let avc = UIAlertController(
+                  title: "Login",
+                  message: String(statusCode),
+                  preferredStyle: .alert
+                )
+            
+               self.present(avc, animated: true, completion: nil)
 
+               // do something in your app
+           case let .failure(error):
+                print("error")
+                
+        }
+       }
     }
+    
 }
 
 
