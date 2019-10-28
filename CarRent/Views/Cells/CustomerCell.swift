@@ -13,8 +13,7 @@ class CustomerCell: UITableViewCell {
 
     @IBOutlet weak var customerName: UILabel!
     @IBOutlet weak var customerEmail: UILabel!
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,8 +24,8 @@ class CustomerCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    public func configureWith(customer : Customer) {
+
+    public func configureWith(customer: Customer) {
         customerName.text = customer.firstName +  " " + customer.lastName
         customerEmail.text = customer.emailAddress
     }

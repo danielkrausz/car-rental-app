@@ -16,32 +16,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
-    @IBAction func showAlertButtonTapped(_ responseMessage : String) {
 
-        let alert = UIAlertController(title: "HTTP Response", message: responseMessage, preferredStyle: .alert)
-
-                let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
-                })
-                alert.addAction(ok)
-                let cancel = UIAlertAction(title: "Cancel", style: .default, handler: { action in
-                })
-                alert.addAction(cancel)
-                DispatchQueue.main.async(execute: {
-                   self.present(alert, animated: true)
-           })
-
-       }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    
+
     func displayLoginPendingAlert() -> UIAlertController {
             //create an alert controller
         let pending = UIAlertController(title: "Logging in...", message: nil, preferredStyle: .alert)
@@ -60,9 +44,8 @@ class LoginViewController: UIViewController {
             return pending
     }
 
+    @IBAction func loginAction(_ sender: Any) {
 
-    @IBAction func LoginAction(_ sender: Any) {
-    
         let user = emailTextField.text
         let password = passwordTextField.text
 
@@ -70,39 +53,36 @@ class LoginViewController: UIViewController {
             return
             //TODO Better error handling
         }
-        
+
         let loadingLogin = displayLoginPendingAlert()
-        
+
         let provider = MoyaProvider<CarRentService>(plugins: [CredentialsPlugin { _ -> URLCredential? in
             return URLCredential(user: user!, password: password!, persistence: .none)
           }
         ])
-        
-        
+
        provider.request(.login) { result in
            switch result {
            case let .success(moyaResponse):
                let data = moyaResponse.data // Data, your JSON response is probably in here!
                let statusCode = moyaResponse.statusCode // Int - 200, 401, 500, etc
-               
+
 //                let avc = UIAlertController(
 //                  title: "Login",
 //                  message: String(statusCode),
 //                  preferredStyle: .alert
 //                )
                let keychain = Keychain(service: "car-rent-cred")
-               
+
                do {
                 try keychain.set(user!, key: "username")
-               }
-               catch let error {
+               } catch let error {
                    print(error)
                }
-               
+
                do {
                 try keychain.set(password!, key: "password")
-               }
-               catch let error {
+               } catch let error {
                    print(error)
                }
                self.performSegue(withIdentifier: "loginSegue", sender: self)
@@ -114,11 +94,9 @@ class LoginViewController: UIViewController {
             NSLog("The \"OK\" alert occured.")
             }))
             self.present(alert, animated: true, completion: nil)
-                
+
         }
        }
     }
-    
+
 }
-
-

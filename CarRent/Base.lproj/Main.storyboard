@@ -47,11 +47,10 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDb-2O-cg8">
-                                        <rect key="frame" x="97.5" y="193" width="150" height="37"/>
+                                        <rect key="frame" x="103" y="193" width="139" height="37"/>
                                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="139" id="M4B-7M-vy0"/>
-                                            <constraint firstAttribute="width" constant="150" id="MRW-bF-ERB"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="Rtw-Uf-d9a"/>
                                             <constraint firstAttribute="height" constant="37" id="tfW-HB-dSe"/>
                                         </constraints>
@@ -64,7 +63,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="LoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N9q-1P-G8K"/>
+                                            <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEo-CF-nqv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -138,7 +137,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJ0-nG-TLC">
-                                    <rect key="frame" x="96" y="28" width="183" height="135"/>
+                                    <rect key="frame" x="40" y="28" width="295" height="135"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -147,8 +146,8 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="cJ0-nG-TLC" secondAttribute="bottom" constant="28" id="LEt-EW-ACQ"/>
-                                <constraint firstAttribute="trailing" secondItem="cJ0-nG-TLC" secondAttribute="trailing" constant="96" id="Ng2-rr-xwA"/>
-                                <constraint firstItem="cJ0-nG-TLC" firstAttribute="leading" secondItem="hdR-WX-bVO" secondAttribute="leading" constant="96" id="YDY-1q-pgB"/>
+                                <constraint firstAttribute="trailing" secondItem="cJ0-nG-TLC" secondAttribute="trailing" constant="40" id="Ng2-rr-xwA"/>
+                                <constraint firstItem="cJ0-nG-TLC" firstAttribute="leading" secondItem="hdR-WX-bVO" secondAttribute="leading" constant="40" id="YDY-1q-pgB"/>
                                 <constraint firstItem="cJ0-nG-TLC" firstAttribute="top" secondItem="hdR-WX-bVO" secondAttribute="top" constant="28" id="YFp-az-FL5"/>
                             </constraints>
                         </view>

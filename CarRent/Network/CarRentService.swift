@@ -14,12 +14,11 @@ public enum CarRentService {
   // 2
   case login
   case customers
-    
+
 }
 
-
 extension CarRentService: TargetType {
-    
+
   // 1
   public var baseURL: URL {
     return URL(string: "https://penzfeldobas.herokuapp.com")!
@@ -40,7 +39,7 @@ extension CarRentService: TargetType {
     case .customers: return .get
     }
   }
-    
+
     public var sampleData: Data {
         return Data()
     }
