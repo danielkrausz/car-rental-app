@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "KeychainAccess",
+        "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess",
+        "state": {
+          "branch": null,
+          "revision": "61cf758b1b58e3b1bbecb97bb7b4a2ede5817bb3",
+          "version": "4.0.0"
+        }
+      },
+      {
         "package": "Moya",
         "repositoryURL": "https://github.com/Moya/Moya.git",
         "state": {

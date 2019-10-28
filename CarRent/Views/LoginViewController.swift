@@ -8,6 +8,7 @@
 
 import UIKit
 import Moya
+import KeychainAccess
 
 class LoginViewController: UIViewController {
     let provider = MoyaProvider<CarRentService>()
@@ -89,7 +90,21 @@ class LoginViewController: UIViewController {
 //                  message: String(statusCode),
 //                  preferredStyle: .alert
 //                )
-            
+               let keychain = Keychain(service: "car-rent-cred")
+               
+               do {
+                try keychain.set(user!, key: "username")
+               }
+               catch let error {
+                   print(error)
+               }
+               
+               do {
+                try keychain.set(password!, key: "password")
+               }
+               catch let error {
+                   print(error)
+               }
                self.performSegue(withIdentifier: "loginSegue", sender: self)
                // do something in your app
            case let .failure(error):

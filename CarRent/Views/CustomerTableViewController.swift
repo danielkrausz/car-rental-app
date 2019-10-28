@@ -9,14 +9,11 @@
 import UIKit
 import Foundation
 import Moya
+import KeychainAccess
 
 class CustomerTableViewController: UITableViewController {
     
-    let provider = MoyaProvider<CarRentService>(plugins: [CredentialsPlugin { _ -> URLCredential? in
-        return URLCredential(user: "admin", password: "admin", persistence: .none)
-      }
-    ])
-    
+    @IBOutlet var customerTableView: UITableView!
     @IBOutlet weak var loadMessage: UILabel!
     // MARK: - View State
     private var state: State = .loading {
@@ -40,6 +37,19 @@ class CustomerTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let keychain = Keychain(service: "car-rent-cred")
+           
+        let username = try? keychain.get("username")
+        let password = try? keychain.get("password")
+        let provider = MoyaProvider<CarRentService>(plugins: [CredentialsPlugin { _ -> URLCredential? in
+           return URLCredential(user: username!, password: password!, persistence: .none)
+            }
+        ])
+        
+        
+        
+        
+        
         state = .loading
 
         provider.request(.customers) { [weak self] result in
@@ -48,7 +58,11 @@ class CustomerTableViewController: UITableViewController {
           switch result {
           case .success(let response):
             do {
-              self.state = .ready(try response.map(CarRentServiceResponse<Customer>.self).data.results)
+                let string1 = String(data: response.data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
+                self.loadMessage.text = string1
+                debugPrint(try response.mapJSON())
+                
+                self.state = .ready(try response.map(CarRentServiceResponse<Customer>.self).results)
             } catch {
               self.state = .error
             }

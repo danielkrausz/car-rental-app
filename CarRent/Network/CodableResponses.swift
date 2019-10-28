@@ -9,9 +9,5 @@
 import Foundation
 
 struct CarRentServiceResponse<T: Codable>: Codable {
-  let data: CarRentSerivceResults<T>
-}
-
-struct CarRentSerivceResults<T: Codable>: Codable {
-  let results: [T]
+    let results: [T]
 }

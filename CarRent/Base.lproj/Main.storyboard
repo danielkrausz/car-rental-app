@@ -118,19 +118,19 @@
                         <outlet property="emailTextField" destination="8wV-dV-Aaa" id="t52-qX-kdl"/>
                         <outlet property="loginButton" destination="bDb-2O-cg8" id="ABn-5x-TNe"/>
                         <outlet property="passwordTextField" destination="xRX-II-N9b" id="uzv-JW-dtx"/>
-                        <segue destination="wTf-iI-nBr" kind="showDetail" identifier="loginSegue" id="S7a-M6-djP"/>
+                        <segue destination="mdw-4N-Ifs" kind="showDetail" identifier="loginSegue" id="S7a-M6-djP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
-        <!--Customer Table View Controller-->
+        <!--Customers-->
         <scene sceneID="O0L-Pz-DYg">
             <objects>
                 <tableViewController storyboardIdentifier="customerTableView" modalPresentationStyle="fullScreen" id="wTf-iI-nBr" customClass="CustomerTableViewController" customModule="CarRent" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="95" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="TEt-7d-uUI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="hdR-WX-bVO">
@@ -185,16 +185,39 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="wTf-iI-nBr" id="eXt-1X-jRQ"/>
                             <outlet property="delegate" destination="wTf-iI-nBr" id="osL-zl-tZA"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Customers" id="b42-zp-Lv9"/>
                     <connections>
+                        <outlet property="customerTableView" destination="TEt-7d-uUI" id="RwT-q2-bdL"/>
                         <outlet property="loadMessage" destination="cJ0-nG-TLC" id="bQL-so-Msg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tu6-kV-tQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1768.8" y="139.880059970015"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gbq-5g-2mS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="mdw-4N-Ifs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="KsR-HL-och">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wTf-iI-nBr" kind="relationship" relationship="rootViewController" id="i1P-kk-aoD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dw4-fh-mqM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="829.60000000000002" y="139.880059970015"/>
         </scene>

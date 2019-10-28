@@ -14,4 +14,10 @@ struct Customer : Codable {
     var lastName: String
     var emailAddress: String
     var enabled: Bool
+    var phone: String
+    var drivingLicenceFrontId: Int
+    var drivingLicenceBackId: Int
+    var profileImageId: Int
+    var licenceCardNumber: String
+    var expirationDate: String
 }

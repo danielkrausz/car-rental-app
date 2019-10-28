@@ -17,6 +17,7 @@
 		290902B5235D22870083B860 /* CarRentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290902B4235D22870083B860 /* CarRentTests.swift */; };
 		290902C0235D22870083B860 /* CarRentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290902BF235D22870083B860 /* CarRentUITests.swift */; };
 		29210E822366481D00EE3E3F /* CodableResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29210E812366481D00EE3E3F /* CodableResponses.swift */; };
+		294969DF23670D3100C0ED37 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 294969DE23670D3100C0ED37 /* KeychainAccess */; };
 		297ADE40236512EB001C4876 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 297ADE3F236512EB001C4876 /* .gitignore */; };
 		297ADE432365182F001C4876 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 297ADE422365182F001C4876 /* Moya */; };
 		297ADE46236519D8001C4876 /* CarRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297ADE45236519D8001C4876 /* CarRentService.swift */; };
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294969DF23670D3100C0ED37 /* KeychainAccess in Frameworks */,
 				297ADE432365182F001C4876 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +200,7 @@
 			name = CarRent;
 			packageProductDependencies = (
 				297ADE422365182F001C4876 /* Moya */,
+				294969DE23670D3100C0ED37 /* KeychainAccess */,
 			);
 			productName = CarRent;
 			productReference = 2909029A235D22800083B860 /* CarRent.app */;
@@ -273,6 +276,7 @@
 			mainGroup = 29090291235D22800083B860;
 			packageReferences = (
 				297ADE412365182F001C4876 /* XCRemoteSwiftPackageReference "Moya" */,
+				294969DD23670D3100C0ED37 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 2909029B235D22800083B860 /* Products */;
 			projectDirPath = "";
@@ -656,6 +660,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		294969DD23670D3100C0ED37 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		297ADE412365182F001C4876 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -667,6 +679,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		294969DE23670D3100C0ED37 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 294969DD23670D3100C0ED37 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
 		297ADE422365182F001C4876 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 297ADE412365182F001C4876 /* XCRemoteSwiftPackageReference "Moya" */;
