@@ -21,7 +21,8 @@ extension CarRentService: TargetType {
 
   // 1
   public var baseURL: URL {
-    return URL(string: "https://penzfeldobas.herokuapp.com")!
+//    return URL(string: "https://penzfeldobas.herokuapp.com")!
+    return URL(string: "https://2b95ebf2-d9ec-4229-b25f-d7346dc40934.mock.pstmn.io")!
   }
 
   // 2

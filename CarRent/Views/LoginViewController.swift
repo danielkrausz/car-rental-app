@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
                // do something in your app
            case let .failure(error):
             loadingLogin.dismiss(animated: true, completion: nil)
-            let alert = UIAlertController(title: "Login failed", message: "Wrong username or password.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Login failed", message: error.errorDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
             }))

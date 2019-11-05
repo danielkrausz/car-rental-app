@@ -11,9 +11,9 @@ import Foundation
 import Moya
 import KeychainAccess
 
-class CustomerTableViewController: UITableViewController {
+class CustomerTableViewController: UIViewController {
 
-    @IBOutlet var customerTableView: UITableView!
+    @IBOutlet weak var customerTableView: UITableView!
     @IBOutlet weak var loadMessage: UILabel!
     // MARK: - View State
     private var state: State = .loading {
@@ -21,6 +21,7 @@ class CustomerTableViewController: UITableViewController {
         switch state {
         case .ready:
           loadMessage.isHidden = true
+          customerTableView.reloadData()
         case .loading:
           loadMessage.isHidden = false
           loadMessage.text = "Loading customers ..."
@@ -56,9 +57,10 @@ class CustomerTableViewController: UITableViewController {
             do {
                 let string1 = String(data: response.data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
                 self.loadMessage.text = string1
-                debugPrint(try response.mapJSON())
+//                debugPrint(try response.map([Customer].self))
+                debugPrint(try response.map([Customer].self))
+                self.state = .ready(try response.map([Customer].self))
 
-                self.state = .ready(try response.map(CarRentServiceResponse<Customer>.self).results)
             } catch {
               self.state = .error
             }
@@ -78,30 +80,33 @@ extension CustomerTableViewController {
 }
 
 // MARK: - UITableView Delegate & Data Source
-extension CustomerTableViewController {
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: CustomerCell.reuseIdentifier, for: indexPath) as? CustomerCell ?? CustomerCell()
+extension CustomerTableViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: CustomerCell.reuseIdentifier, for: indexPath) as? CustomerCell ?? CustomerCell()
 
-      guard case .ready(let items) = state else { return cell }
+    guard case .ready(let items) = state else { return cell }
 
-        cell.configureWith(customer: items[indexPath.item])
+    cell.configureWith(customer: items[indexPath.item])
 
-      return cell
-    }
+    return cell
+  }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     guard case .ready(let items) = state else { return 0 }
 
     return items.count
   }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+  func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: false)
 
     guard case .ready(let items) = state else { return }
+
+//    let comicVC = CardViewController.instantiate(comic: items[indexPath.item])
+//    navigationController?.pushViewController(comicVC, animated: true)
   }
 }
