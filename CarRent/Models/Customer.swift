@@ -9,7 +9,7 @@
 import Foundation
 
 struct Customer: Codable {
-    var customerID: Int
+    var customerId: Int
     var firstName: String
     var lastName: String
     var emailAddress: String

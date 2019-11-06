@@ -13,20 +13,39 @@ import KeychainAccess
 
 class CustomerTableViewController: UIViewController {
 
+    @IBAction func logoutAction(_ sender: UIBarButtonItem) {
+        let keychain = Keychain(service: "car-rent-cred")
+
+        do {
+            try keychain.remove("username")
+        } catch let error {
+            print("error: \(error)")
+        }
+
+        do {
+            try keychain.remove("password")
+        } catch let error {
+            print("error: \(error)")
+        }
+
+        self.performSegue(withIdentifier: "logoutSegue", sender: self)
+
+    }
     @IBOutlet weak var customerTableView: UITableView!
     @IBOutlet weak var loadMessage: UILabel!
+    @IBOutlet weak var loadMessageContainer: UIView!
     // MARK: - View State
     private var state: State = .loading {
       didSet {
         switch state {
         case .ready:
-          loadMessage.isHidden = true
+          loadMessageContainer.isHidden = true
           customerTableView.reloadData()
         case .loading:
-          loadMessage.isHidden = false
+          loadMessageContainer.isHidden = false
           loadMessage.text = "Loading customers ..."
         case .error:
-          loadMessage.isHidden = false
+          loadMessageContainer.isHidden = false
           loadMessage.text = """
                               Something went wrong!
                               Try again later.
@@ -43,7 +62,7 @@ class CustomerTableViewController: UIViewController {
         let username = try? keychain.get("username")
         let password = try? keychain.get("password")
         let provider = MoyaProvider<CarRentService>(plugins: [CredentialsPlugin { _ -> URLCredential? in
-           return URLCredential(user: username!, password: password!, persistence: .none)
+           return URLCredential(user: username!, password: password!, persistence: .permanent)
             }
         ])
 
@@ -57,12 +76,12 @@ class CustomerTableViewController: UIViewController {
             do {
                 let string1 = String(data: response.data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
                 self.loadMessage.text = string1
-//                debugPrint(try response.map([Customer].self))
-                debugPrint(try response.map([Customer].self))
-                self.state = .ready(try response.map([Customer].self))
+
+                self.state = .ready(try JSONDecoder().decode([Customer].self, from: response.data))
 
             } catch {
               self.state = .error
+                debugPrint(error)
             }
           case .failure:
             self.state = .error
