@@ -20,6 +20,7 @@
 		297ADE40236512EB001C4876 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 297ADE3F236512EB001C4876 /* .gitignore */; };
 		297ADE432365182F001C4876 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 297ADE422365182F001C4876 /* Moya */; };
 		297ADE46236519D8001C4876 /* CarRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297ADE45236519D8001C4876 /* CarRentService.swift */; };
+		299CCDF12379651800A37D0A /* CustomerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299CCDF02379651800A37D0A /* CustomerDetailsViewController.swift */; };
 		29BB0C6F2366269000159218 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB0C6E2366269000159218 /* Customer.swift */; };
 		29BB0C7323662B6900159218 /* CustomerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB0C7223662B6900159218 /* CustomerTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		290902C1235D22870083B860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		297ADE3F236512EB001C4876 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		297ADE45236519D8001C4876 /* CarRentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentService.swift; sourceTree = "<group>"; };
+		299CCDF02379651800A37D0A /* CustomerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsViewController.swift; sourceTree = "<group>"; };
 		29BB0C6E2366269000159218 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		29BB0C7223662B6900159218 /* CustomerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				29BB0C7123662A9700159218 /* Cells */,
+				299CCDF02379651800A37D0A /* CustomerDetailsViewController.swift */,
 				290902A1235D22800083B860 /* LoginViewController.swift */,
 				29BB0C7223662B6900159218 /* CustomerTableViewController.swift */,
 			);
@@ -345,6 +348,7 @@
 				29BB0C7323662B6900159218 /* CustomerTableViewController.swift in Sources */,
 				2909029E235D22800083B860 /* AppDelegate.swift in Sources */,
 				29BB0C6F2366269000159218 /* Customer.swift in Sources */,
+				299CCDF12379651800A37D0A /* CustomerDetailsViewController.swift in Sources */,
 				290902A0235D22800083B860 /* SceneDelegate.swift in Sources */,
 				297ADE46236519D8001C4876 /* CarRentService.swift in Sources */,
 			);

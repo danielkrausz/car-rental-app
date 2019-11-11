@@ -13,6 +13,18 @@ import KeychainAccess
 
 class CustomerTableViewController: UIViewController {
 
+    enum CustomerTableSection: Int {
+        case pending = 0, enabled
+    }
+
+    let sectionHeaderHight: CGFloat = 25
+
+    var customerData = [CustomerTableSection: [[String: String]]]()
+
+//    func sortCustomers() {
+//        customerData[.pending] = [Customer].filter({$0.enabled == true})
+//    }
+
     @IBAction func logoutAction(_ sender: UIBarButtonItem) {
         let keychain = Keychain(service: "car-rent-cred")
 
@@ -125,7 +137,7 @@ extension CustomerTableViewController: UITableViewDelegate, UITableViewDataSourc
 
     guard case .ready(let items) = state else { return }
 
-//    let comicVC = CardViewController.instantiate(comic: items[indexPath.item])
-//    navigationController?.pushViewController(comicVC, animated: true)
+    let customerDetaislVC = CustomerDetailsViewController.instantiate(customer: items[indexPath.item])
+    navigationController?.pushViewController(customerDetaislVC, animated: true)
   }
 }

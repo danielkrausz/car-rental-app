@@ -129,12 +129,12 @@
         <scene sceneID="O0L-Pz-DYg">
             <objects>
                 <tableViewController storyboardIdentifier="customerTableView" modalPresentationStyle="fullScreen" id="wTf-iI-nBr" customClass="CustomerTableViewController" customModule="CarRent" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="95" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="TEt-7d-uUI">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="TEt-7d-uUI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="hdR-WX-bVO">
-                            <rect key="frame" x="0.0" y="168.5" width="375" height="191"/>
+                            <rect key="frame" x="0.0" y="138.5" width="375" height="191"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJ0-nG-TLC">
@@ -153,24 +153,24 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="5" indentationWidth="10" reuseIdentifier="CustomerCell" rowHeight="95" id="K5P-Fd-fap" customClass="CustomerCell" customModule="CarRent" customModuleProvider="target">
-                                <rect key="frame" x="16" y="55.5" width="343" height="95"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationLevel="5" indentationWidth="10" reuseIdentifier="CustomerCell" rowHeight="65" id="K5P-Fd-fap" customClass="CustomerCell" customModule="CarRent" customModuleProvider="target">
+                                <rect key="frame" x="16" y="55.5" width="343" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K5P-Fd-fap" id="732-Ps-t5l">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="95"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="317" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bcG-gO-ZIj">
-                                            <rect key="frame" x="10" y="10" width="206.5" height="75"/>
+                                            <rect key="frame" x="10" y="10" width="206.5" height="45"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstName LastName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44t-Ah-4Tu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="206.5" height="29.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="206.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="me@apple.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMx-0a-nU3">
-                                                    <rect key="frame" x="0.0" y="45.5" width="206.5" height="29.5"/>
+                                                    <rect key="frame" x="0.0" y="30.5" width="206.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -211,12 +211,200 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tu6-kV-tQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2634" y="140"/>
+            <point key="canvasLocation" x="2633" y="179"/>
+        </scene>
+        <!--Customer Details View Controller-->
+        <scene sceneID="ikc-Fa-6fV">
+            <objects>
+                <viewController storyboardIdentifier="CustomerDetailsViewController" id="rH3-C9-Pdr" customClass="CustomerDetailsViewController" customModule="CarRent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="evf-5H-y4d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="VWd-NE-i66">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="CustomerName" id="opS-xu-yt1"/>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="h2u-3F-b9o">
+                                <rect key="frame" x="0.0" y="44" width="375" height="604"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvf-cM-0Wr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-Mz-faE">
+                                                <rect key="frame" x="10" y="28" width="355" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXP-BV-l6q">
+                                        <rect key="frame" x="0.0" y="106" width="375" height="109"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="184" translatesAutoresizingMaskIntoConstraints="NO" id="1cP-aV-Suh">
+                                                <rect key="frame" x="10" y="20" width="355.5" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQX-Nh-owd" userLabel="Name">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="24"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Name">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CustomerName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sb-6H-8JO">
+                                                        <rect key="frame" x="235.5" y="0.0" width="120" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ph0-ZV-HUD">
+                                        <rect key="frame" x="0.0" y="215" width="375" height="64"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" spacing="176" translatesAutoresizingMaskIntoConstraints="NO" id="iuy-yJ-lNz">
+                                                <rect key="frame" x="10" y="20" width="355.5" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twu-NJ-0r0" userLabel="Name">
+                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="24"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Phone">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CustomerPhone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gd-hj-qHo">
+                                                        <rect key="frame" x="232" y="0.0" width="123.5" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWY-bf-R8G">
+                                        <rect key="frame" x="0.0" y="279" width="375" height="71"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="244" translatesAutoresizingMaskIntoConstraints="NO" id="QCp-Xw-AUX">
+                                                <rect key="frame" x="10.5" y="20" width="355" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7S-Bq-n05">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="De7-Oj-C7B">
+                                                        <rect key="frame" x="306" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="customerSwitchClicked:" destination="rH3-C9-Pdr" eventType="valueChanged" id="yqR-mJ-2YY"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSC-5q-83H">
+                                        <rect key="frame" x="0.0" y="350" width="375" height="64"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" spacing="113" translatesAutoresizingMaskIntoConstraints="NO" id="h0P-4P-7iX">
+                                                <rect key="frame" x="10" y="20" width="355.5" height="24"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dl-0P-WeU" userLabel="Name">
+                                                        <rect key="frame" x="0.0" y="0.0" width="174" height="24"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="licenceCardNumber">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="licenceId" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-Up-3IR">
+                                                        <rect key="frame" x="287" y="0.0" width="68.5" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lto-T2-9Wp">
+                                        <rect key="frame" x="0.0" y="414" width="375" height="90"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ja-1M-iLf">
+                                                <rect key="frame" x="10" y="20" width="355.5" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ba6-jp-nqW">
+                                        <rect key="frame" x="0.0" y="504" width="375" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-cD-y6N">
+                                                <rect key="frame" x="10" y="20" width="355.5" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Lto-T2-9Wp" firstAttribute="top" secondItem="h2u-3F-b9o" secondAttribute="top" constant="414" id="4yh-qg-Jzl"/>
+                                    <constraint firstItem="iSC-5q-83H" firstAttribute="top" secondItem="h2u-3F-b9o" secondAttribute="top" constant="350" id="BRX-4h-jPJ"/>
+                                    <constraint firstItem="gWY-bf-R8G" firstAttribute="top" secondItem="h2u-3F-b9o" secondAttribute="top" constant="279" id="LNg-vd-DWi"/>
+                                    <constraint firstItem="ph0-ZV-HUD" firstAttribute="top" secondItem="h2u-3F-b9o" secondAttribute="top" constant="215" id="eKc-6A-9H2"/>
+                                    <constraint firstItem="TXP-BV-l6q" firstAttribute="top" secondItem="h2u-3F-b9o" secondAttribute="top" constant="106" id="fh2-Na-yg6"/>
+                                    <constraint firstItem="Ba6-jp-nqW" firstAttribute="top" secondItem="h2u-3F-b9o" secondAttribute="top" constant="504" id="k7u-Qg-BEg"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="8pZ-RU-pXD"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="34a-tx-fgf"/>
+                    </view>
+                    <connections>
+                        <outlet property="customerEnabledSwitch" destination="De7-Oj-C7B" id="VqP-AS-1IG"/>
+                        <outlet property="customerLicenceId" destination="Shk-Up-3IR" id="w9Q-Lj-4mg"/>
+                        <outlet property="customerName" destination="4sb-6H-8JO" id="InW-pU-Bf8"/>
+                        <outlet property="customerNameNav" destination="opS-xu-yt1" id="ATI-uw-voW"/>
+                        <outlet property="customerPhone" destination="4gd-hj-qHo" id="1Uf-rq-A5M"/>
+                        <outlet property="customerProfileImage" destination="MsV-Mz-faE" id="Hqz-uu-fXf"/>
+                        <outlet property="drivingLicenceBackImage" destination="6ja-1M-iLf" id="18U-K7-9FB"/>
+                        <outlet property="drivingLicenceFrontImage" destination="HtM-cD-y6N" id="OEw-AK-yhZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O9G-ky-xAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4348" y="141.67916041979012"/>
         </scene>
         <!--Customers-->
         <scene sceneID="gbq-5g-2mS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dw4-fh-mqM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="mdw-4N-Ifs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Customers" image="person.3.fill" catalog="system" id="jWN-fz-3CU"/>
                     <toolbarItems/>
@@ -229,6 +417,7 @@
                         <segue destination="wTf-iI-nBr" kind="relationship" relationship="rootViewController" id="i1P-kk-aoD"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dw4-fh-mqM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1768.8" y="139.880059970015"/>
         </scene>
@@ -238,6 +427,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="SSe-OD-XKR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6PN-16-5zB">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

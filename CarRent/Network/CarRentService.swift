@@ -14,6 +14,9 @@ public enum CarRentService {
   // 2
   case login
   case customers
+  case enable(customerId: Int)
+  case disable(customerId: Int)
+  case image(imageId: Int)
 
 }
 
@@ -30,6 +33,9 @@ extension CarRentService: TargetType {
     switch self {
     case .login: return "/login/admin/"
     case .customers: return "/customers/"
+    case .enable(let customerId): return "/register/accept/\(customerId)"
+    case .disable(let customerId): return "/register/decline/\(customerId)"
+    case .image(let imageId): return "/image/\(imageId)"
     }
   }
 
@@ -38,6 +44,9 @@ extension CarRentService: TargetType {
     switch self {
     case .login: return .get
     case .customers: return .get
+    case .enable: return .post
+    case .disable: return .post
+    case .image: return .get
     }
   }
 
@@ -48,9 +57,7 @@ extension CarRentService: TargetType {
   // 5
   public var task: Task {
     switch self {
-    case .login:
-        return .requestPlain
-    case .customers:
+    case .login, .customers, .enable, .disable, .image:
         return .requestPlain
     }
   }
