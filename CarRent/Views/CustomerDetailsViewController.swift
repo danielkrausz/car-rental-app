@@ -116,7 +116,7 @@ extension CustomerDetailsViewController {
                         //TODO: UI ALERT
                       }
                     }
-        
+
         provider.request(.image(imageId: customer.drivingLicenceBackId)) { [weak self] result in
           guard let self = self else { return }
 
@@ -131,7 +131,7 @@ extension CustomerDetailsViewController {
             //TODO: UI ALERT
           }
         }
-        
+
         provider.request(.image(imageId: customer.profileImageId)) { [weak self] result in
           guard let self = self else { return }
 
@@ -146,7 +146,6 @@ extension CustomerDetailsViewController {
             //TODO: UI ALERT
           }
         }
-        
 
     }
 

@@ -17,6 +17,9 @@
 		290902B5235D22870083B860 /* CarRentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290902B4235D22870083B860 /* CarRentTests.swift */; };
 		290902C0235D22870083B860 /* CarRentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290902BF235D22870083B860 /* CarRentUITests.swift */; };
 		294969DF23670D3100C0ED37 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 294969DE23670D3100C0ED37 /* KeychainAccess */; };
+		2963B163238298A4004D1549 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2963B162238298A4004D1549 /* Car.swift */; };
+		2963B16523829A07004D1549 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2963B16423829A07004D1549 /* CarTableViewController.swift */; };
+		2963B1672382A2D4004D1549 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2963B1662382A2D4004D1549 /* CarCell.swift */; };
 		297ADE40236512EB001C4876 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 297ADE3F236512EB001C4876 /* .gitignore */; };
 		297ADE432365182F001C4876 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 297ADE422365182F001C4876 /* Moya */; };
 		297ADE46236519D8001C4876 /* CarRentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297ADE45236519D8001C4876 /* CarRentService.swift */; };
@@ -58,6 +61,9 @@
 		290902BB235D22870083B860 /* CarRentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarRentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		290902BF235D22870083B860 /* CarRentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentUITests.swift; sourceTree = "<group>"; };
 		290902C1235D22870083B860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2963B162238298A4004D1549 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		2963B16423829A07004D1549 /* CarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
+		2963B1662382A2D4004D1549 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
 		297ADE3F236512EB001C4876 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		297ADE45236519D8001C4876 /* CarRentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRentService.swift; sourceTree = "<group>"; };
 		299CCDF02379651800A37D0A /* CustomerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				29BB0C6E2366269000159218 /* Customer.swift */,
+				2963B162238298A4004D1549 /* Car.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +177,7 @@
 				299CCDF02379651800A37D0A /* CustomerDetailsViewController.swift */,
 				290902A1235D22800083B860 /* LoginViewController.swift */,
 				29BB0C7223662B6900159218 /* CustomerTableViewController.swift */,
+				2963B16423829A07004D1549 /* CarTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				290560D123661F2800DA0007 /* CustomerCell.swift */,
+				2963B1662382A2D4004D1549 /* CarCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -343,9 +352,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2963B16523829A07004D1549 /* CarTableViewController.swift in Sources */,
 				290902A2235D22800083B860 /* LoginViewController.swift in Sources */,
+				2963B163238298A4004D1549 /* Car.swift in Sources */,
 				290560D223661F2800DA0007 /* CustomerCell.swift in Sources */,
 				29BB0C7323662B6900159218 /* CustomerTableViewController.swift in Sources */,
+				2963B1672382A2D4004D1549 /* CarCell.swift in Sources */,
 				2909029E235D22800083B860 /* AppDelegate.swift in Sources */,
 				29BB0C6F2366269000159218 /* Customer.swift in Sources */,
 				299CCDF12379651800A37D0A /* CustomerDetailsViewController.swift in Sources */,
