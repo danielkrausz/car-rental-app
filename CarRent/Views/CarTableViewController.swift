@@ -111,7 +111,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
     guard case .ready(let items) = state else { return }
 
-//    let customerDetaislVC = CustomerDetailsViewController.instantiate(customer: items[indexPath.item])
-//    navigationController?.pushViewController(customerDetaislVC, animated: true)
+    let carDetailsVC = CarDetailsViewController.instantiate(car: items[indexPath.item])
+    navigationController?.pushViewController(carDetailsVC, animated: true)
   }
 }

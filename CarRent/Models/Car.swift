@@ -18,4 +18,10 @@ struct Car: Codable {
     var state: String
     var price: Double
     var currentKm: Double
+    var station: Station
+}
+
+struct Station : Codable {
+    var latitude: Double
+    var longitude: Double
 }
