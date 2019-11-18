@@ -62,7 +62,7 @@ extension CarDetailsViewController {
         }
         debugPrint("\(car.station.longitude) | \(car.station.latitude)")
         let locationAnnotation = MKPointAnnotation()
-        locationAnnotation.coordinate = CLLocationCoordinate2D(latitude: car.station.longitude, longitude: car.station.latitude)
+        locationAnnotation.coordinate = CLLocationCoordinate2D(latitude: car.station.latitude, longitude: car.station.longitude)
         locationAnnotation.title = "\(car.brand) \(car.model)"
         carLocationMapView.addAnnotation(locationAnnotation)
         centerMapOnLocation(locationAnnotation.coordinate, mapView: carLocationMapView)

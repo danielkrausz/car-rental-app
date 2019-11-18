@@ -65,9 +65,38 @@ class CustomerTableViewController: UIViewController {
         }
       }
     }
+    
+    @objc func refresh(sender:AnyObject)
+    {
+        provider.request(.customers) { [weak self] result in
+          guard let self = self else { return }
+
+          switch result {
+          case .success(let response):
+            do {
+                let string1 = String(data: response.data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
+                self.loadMessage.text = string1
+
+                self.state = .ready(try JSONDecoder().decode([Customer].self, from: response.data))
+
+            } catch {
+              self.state = .error
+                debugPrint(error)
+            }
+          case .failure:
+            self.state = .error
+          }
+        }
+        
+        customerTableView.reloadData()
+        customerTableView.refreshControl?.endRefreshing()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        customerTableView.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        customerTableView.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
 
         let keychain = Keychain(service: "car-rent-cred")
 
@@ -140,4 +169,5 @@ extension CustomerTableViewController: UITableViewDelegate, UITableViewDataSourc
     let customerDetaislVC = CustomerDetailsViewController.instantiate(customer: items[indexPath.item])
     navigationController?.pushViewController(customerDetaislVC, animated: true)
   }
+    
 }
