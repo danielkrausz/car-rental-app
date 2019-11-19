@@ -20,6 +20,7 @@ class CarDetailsViewController: UIViewController {
     @IBOutlet weak var currentKmLbl: UILabel!
     @IBOutlet weak var engineTypeImg: UIImageView!
     @IBOutlet weak var carLocationMapView: MKMapView!
+    @IBOutlet weak var stationNameLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,6 +50,7 @@ extension CarDetailsViewController {
         carColorLbl.text = "\(car.color)"
         currentKmLbl.text = "\(car.currentKm) km"
         licencePlateLbl.text = "\(car.licencePlate)"
+        stationNameLbl.text = "\(car.station.name)"
         
         switch car.engineType {
         case "ELECTRIC":

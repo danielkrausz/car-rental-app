@@ -21,7 +21,9 @@ struct Car: Codable {
     var station: Station
 }
 
-struct Station : Codable {
+struct Station: Codable {
+    var stationId: Int
     var latitude: Double
     var longitude: Double
+    var name: String
 }

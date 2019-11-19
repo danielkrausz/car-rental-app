@@ -87,7 +87,6 @@ class CustomerTableViewController: UIViewController {
             self.state = .error
           }
         }
-        
         customerTableView.reloadData()
         customerTableView.refreshControl?.endRefreshing()
     }
