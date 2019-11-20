@@ -21,14 +21,13 @@ class CarDetailsViewController: UIViewController {
     @IBOutlet weak var engineTypeImg: UIImageView!
     @IBOutlet weak var carLocationMapView: MKMapView!
     @IBOutlet weak var stationNameLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         guard let car = car else { fatalError("Please pass in a valid Customer object") }
 
         layoutCar(car: car)
-        
-        // Do any additional setup after loading the view.
     }
 
     /*
@@ -51,7 +50,7 @@ extension CarDetailsViewController {
         currentKmLbl.text = "\(car.currentKm) km"
         licencePlateLbl.text = "\(car.licencePlate)"
         stationNameLbl.text = "\(car.station.name)"
-        
+
         switch car.engineType {
         case "ELECTRIC":
             engineTypeImg.image = UIImage(named: "electric")
@@ -68,7 +67,6 @@ extension CarDetailsViewController {
         locationAnnotation.title = "\(car.brand) \(car.model)"
         carLocationMapView.addAnnotation(locationAnnotation)
         centerMapOnLocation(locationAnnotation.coordinate, mapView: carLocationMapView)
-        
 
     }
 
@@ -82,7 +80,7 @@ extension CarDetailsViewController {
 
       return carDetailsVC
     }
-    
+
     func centerMapOnLocation(_ location: CLLocationCoordinate2D, mapView: MKMapView) {
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegion(center: location,
@@ -91,5 +89,3 @@ extension CarDetailsViewController {
     }
 
 }
-
-

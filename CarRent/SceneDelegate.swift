@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,7 +17,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let winScene = (scene as? UIWindowScene) else { return }
+        let keychain = Keychain(service: "car-rent-cred")
+        var status = false
+        if ((try? keychain.get("username")) != nil) {
+            status = true
+        } else {
+            status = false
+        }
+        var rootVC: UIViewController?
+        print(status)
+        // swiftlint:disable force_cast
+        if (status == true) {
+            rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "customerTabBar") as! UITabBarController
+        } else {
+            rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginView") as! LoginViewController
+        }
+        
+        let win = UIWindow(windowScene: winScene)
+        win.rootViewController = rootVC
+        win.makeKeyAndVisible()
+        window = win
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

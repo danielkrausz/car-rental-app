@@ -65,9 +65,8 @@ class CustomerTableViewController: UIViewController {
         }
       }
     }
-    
-    @objc func refresh(sender:AnyObject)
-    {
+
+    @objc func refresh(sender: AnyObject) {
         provider.request(.customers) { [weak self] result in
           guard let self = self else { return }
 
@@ -93,7 +92,7 @@ class CustomerTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         customerTableView.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
         customerTableView.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
 
@@ -168,5 +167,5 @@ extension CustomerTableViewController: UITableViewDelegate, UITableViewDataSourc
     let customerDetaislVC = CustomerDetailsViewController.instantiate(customer: items[indexPath.item])
     navigationController?.pushViewController(customerDetaislVC, animated: true)
   }
-    
+
 }
