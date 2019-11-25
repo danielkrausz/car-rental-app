@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Car: Codable {
+public struct Car: Codable {
     var carId: Int
     var licencePlate: String
     var brand: String

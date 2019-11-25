@@ -726,6 +726,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Kc-3f-5xM"/>
                     </view>
+                    <connections>
+                        <outlet property="brandTextField" destination="rjL-am-5Ln" id="oXG-IL-IVh"/>
+                        <outlet property="colorTextField" destination="LIN-dU-syL" id="wQt-qg-UFy"/>
+                        <outlet property="engineTypeTextField" destination="vRY-dT-gvy" id="gqW-ZN-DUW"/>
+                        <outlet property="licencePlateTextField" destination="wH1-B8-Bz5" id="eXm-ei-7gi"/>
+                        <outlet property="modelTextField" destination="Sf8-1x-rFe" id="TAt-Uw-Kwx"/>
+                        <outlet property="stationTextField" destination="AVa-25-Kop" id="hGL-4F-I2R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsP-XI-QeR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
