@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import Foundation
 import Moya
 import KeychainAccess
 
 class CarTableViewController: UIViewController {
-    
+
     var refreshControl = UIRefreshControl()
 
     @IBOutlet weak var carTableView: UITableView!
@@ -37,7 +36,7 @@ class CarTableViewController: UIViewController {
         }
       }
     }
-    
+
     @objc func refresh(sender: AnyObject) {
         provider.request(.cars) { [weak self] result in
           guard let self = self else { return }
@@ -64,7 +63,7 @@ class CarTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         carTableView.addSubview(refreshControl)

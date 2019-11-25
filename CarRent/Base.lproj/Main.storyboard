@@ -660,12 +660,16 @@
                                                 <action selector="cancelCarRegister:" destination="Yda-tj-yqK" id="VZq-E1-vq0"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="sYt-ch-c8l"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="sYt-ch-c8l">
+                                            <connections>
+                                                <action selector="saveCarRegistration:" destination="Yda-tj-yqK" id="7kO-un-IwX"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXP-c7-Oc3">
-                                <rect key="frame" x="20" y="89" width="335" height="289"/>
+                                <rect key="frame" x="20" y="128" width="335" height="391"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brand" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjL-am-5Ln">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
@@ -692,23 +696,37 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Station" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AVa-25-Kop">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mileage (km)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUr-Pa-wTh">
                                         <rect key="frame" x="0.0" y="255" width="335" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price ($)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yn9-BT-OlX">
+                                        <rect key="frame" x="0.0" y="306" width="335" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Station" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AVa-25-Kop">
+                                        <rect key="frame" x="0.0" y="357" width="335" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="yn9-BT-OlX" firstAttribute="leading" secondItem="WXP-c7-Oc3" secondAttribute="leading" id="3Ky-7F-mxf"/>
                                     <constraint firstItem="AVa-25-Kop" firstAttribute="leading" secondItem="WXP-c7-Oc3" secondAttribute="leading" id="7Qm-e8-lpH"/>
                                     <constraint firstItem="vRY-dT-gvy" firstAttribute="leading" secondItem="WXP-c7-Oc3" secondAttribute="leading" id="92h-z1-Pxf"/>
                                     <constraint firstAttribute="trailing" secondItem="vRY-dT-gvy" secondAttribute="trailing" id="Rba-1z-EUC"/>
                                     <constraint firstAttribute="trailing" secondItem="wH1-B8-Bz5" secondAttribute="trailing" id="TqB-Oa-kbs"/>
+                                    <constraint firstItem="jUr-Pa-wTh" firstAttribute="leading" secondItem="WXP-c7-Oc3" secondAttribute="leading" id="VJN-ig-IY2"/>
+                                    <constraint firstAttribute="trailing" secondItem="jUr-Pa-wTh" secondAttribute="trailing" id="aKX-kD-wnk"/>
                                     <constraint firstAttribute="trailing" secondItem="Sf8-1x-rFe" secondAttribute="trailing" id="bSh-y0-rbX"/>
                                     <constraint firstAttribute="trailing" secondItem="AVa-25-Kop" secondAttribute="trailing" id="bdC-ao-Tjx"/>
                                     <constraint firstAttribute="trailing" secondItem="rjL-am-5Ln" secondAttribute="trailing" id="gcd-K1-FRw"/>
                                     <constraint firstItem="wH1-B8-Bz5" firstAttribute="leading" secondItem="WXP-c7-Oc3" secondAttribute="leading" id="hI0-vV-12Q"/>
                                     <constraint firstItem="LIN-dU-syL" firstAttribute="leading" secondItem="WXP-c7-Oc3" secondAttribute="leading" id="ihO-QU-rWa"/>
+                                    <constraint firstAttribute="trailing" secondItem="yn9-BT-OlX" secondAttribute="trailing" id="kNg-xo-C6c"/>
                                     <constraint firstItem="Sf8-1x-rFe" firstAttribute="leading" secondItem="WXP-c7-Oc3" secondAttribute="leading" id="qen-g2-rQL"/>
                                     <constraint firstAttribute="trailing" secondItem="LIN-dU-syL" secondAttribute="trailing" id="sfE-yi-Xfg"/>
                                     <constraint firstItem="rjL-am-5Ln" firstAttribute="leading" secondItem="WXP-c7-Oc3" secondAttribute="leading" id="shp-hz-kM8"/>
@@ -717,7 +735,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4Kc-3f-5xM" firstAttribute="bottom" secondItem="WXP-c7-Oc3" secondAttribute="bottom" constant="269" id="0yx-bk-H1R"/>
+                            <constraint firstItem="4Kc-3f-5xM" firstAttribute="bottom" secondItem="WXP-c7-Oc3" secondAttribute="bottom" constant="128" id="0yx-bk-H1R"/>
                             <constraint firstItem="HsW-Wq-Aye" firstAttribute="top" secondItem="4Kc-3f-5xM" secondAttribute="top" id="4b0-vY-qIx"/>
                             <constraint firstItem="WXP-c7-Oc3" firstAttribute="leading" secondItem="4Kc-3f-5xM" secondAttribute="leading" constant="20" id="6Fx-Lr-s7C"/>
                             <constraint firstItem="HsW-Wq-Aye" firstAttribute="centerX" secondItem="WXP-c7-Oc3" secondAttribute="centerX" id="Boy-Ee-bsu"/>
@@ -731,13 +749,15 @@
                         <outlet property="colorTextField" destination="LIN-dU-syL" id="wQt-qg-UFy"/>
                         <outlet property="engineTypeTextField" destination="vRY-dT-gvy" id="gqW-ZN-DUW"/>
                         <outlet property="licencePlateTextField" destination="wH1-B8-Bz5" id="eXm-ei-7gi"/>
+                        <outlet property="mileageTextField" destination="jUr-Pa-wTh" id="nJy-wB-deC"/>
                         <outlet property="modelTextField" destination="Sf8-1x-rFe" id="TAt-Uw-Kwx"/>
+                        <outlet property="priceTextField" destination="yn9-BT-OlX" id="0Ml-MX-nGg"/>
                         <outlet property="stationTextField" destination="AVa-25-Kop" id="hGL-4F-I2R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsP-XI-QeR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4559.1999999999998" y="1636.7316341829087"/>
+            <point key="canvasLocation" x="4969" y="940"/>
         </scene>
         <!--CarModel-->
         <scene sceneID="UNc-11-dnG">

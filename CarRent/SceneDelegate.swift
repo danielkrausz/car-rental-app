@@ -33,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginView") as! LoginViewController
         }
-        
+
         let win = UIWindow(windowScene: winScene)
         win.rootViewController = rootVC
         win.makeKeyAndVisible()

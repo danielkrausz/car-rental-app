@@ -8,12 +8,11 @@
 
 import UIKit
 import Moya
-import Foundation
 import KeychainAccess
 
 class RentTableViewController: UIViewController {
     var rentRefreshControl = UIRefreshControl()
-    
+
     @IBOutlet var rentTableView: UITableView!
     @IBOutlet weak var loadMessage: UILabel!
     @IBOutlet weak var loadMessageContainer: UIView!
@@ -36,7 +35,7 @@ class RentTableViewController: UIViewController {
         }
       }
     }
-    
+
     @objc func refresh(sender: AnyObject) {
         provider.request(.unclosedRents) { [weak self] result in
           guard let self = self else { return }
@@ -63,12 +62,21 @@ class RentTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         rentRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         rentRefreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         rentTableView.addSubview(rentRefreshControl)
 
         state = .loading
+        
+        let keychain = Keychain(service: "car-rent-cred")
+
+        let username = try? keychain.get("username")
+        let password = try? keychain.get("password")
+        let provider = MoyaProvider<CarRentService>(plugins: [CredentialsPlugin { _ -> URLCredential? in
+           return URLCredential(user: username!, password: password!, persistence: .none)
+            }
+        ])
 
         provider.request(.unclosedRents) { [weak self] result in
           guard let self = self else { return }

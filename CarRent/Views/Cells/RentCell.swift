@@ -31,6 +31,7 @@ class RentCell: UITableViewCell {
         endStationNameLbl.text = String(rent.endStationId)
         startDateLbl.text = rent.actualStartTime
         endDateLbl.text = rent.actualEndTime
+        debugPrint("\(startStationNameLbl.text) || \(endStationNameLbl.text) || \(startDateLbl.text) || \(endDateLbl.text)")
     }
 
 }

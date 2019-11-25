@@ -67,7 +67,7 @@ extension CarRentService: TargetType {
     switch self {
     case .login, .customers, .enable, .disable, .image, .cars, .unclosedRents, .registerCar:
         return .requestPlain
-        
+
     }
   }
 

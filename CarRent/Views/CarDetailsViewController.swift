@@ -21,7 +21,7 @@ class CarDetailsViewController: UIViewController {
     @IBOutlet weak var engineTypeImg: UIImageView!
     @IBOutlet weak var carLocationMapView: MKMapView!
     @IBOutlet weak var stationNameLbl: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
