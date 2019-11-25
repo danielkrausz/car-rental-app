@@ -1,21 +1,20 @@
 //
-//  CarTableViewController.swift
-//  CarRent
+//  RentTableViewController.swift
+//  rentRent
 //
-//  Created by Dániel Krausz on 2019. 10. 27..
+//  Created by Dániel Krausz on 2019. 11. 25..
 //  Copyright © 2019. Dániel Krausz. All rights reserved.
 //
 
 import UIKit
-import Foundation
 import Moya
+import Foundation
 import KeychainAccess
 
-class CarTableViewController: UIViewController {
+class RentTableViewController: UIViewController {
+    var rentRefreshControl = UIRefreshControl()
     
-    var refreshControl = UIRefreshControl()
-
-    @IBOutlet weak var carTableView: UITableView!
+    @IBOutlet var rentTableView: UITableView!
     @IBOutlet weak var loadMessage: UILabel!
     @IBOutlet weak var loadMessageContainer: UIView!
     // MARK: - View State
@@ -24,10 +23,10 @@ class CarTableViewController: UIViewController {
         switch state {
         case .ready:
           loadMessageContainer.isHidden = true
-          carTableView.reloadData()
+          rentTableView.reloadData()
         case .loading:
           loadMessageContainer.isHidden = false
-          loadMessage.text = "Loading cars ..."
+          loadMessage.text = "Loading rents ..."
         case .error:
           loadMessageContainer.isHidden = false
           loadMessage.text = """
@@ -39,7 +38,7 @@ class CarTableViewController: UIViewController {
     }
     
     @objc func refresh(sender: AnyObject) {
-        provider.request(.cars) { [weak self] result in
+        provider.request(.unclosedRents) { [weak self] result in
           guard let self = self else { return }
 
           switch result {
@@ -48,7 +47,7 @@ class CarTableViewController: UIViewController {
                 let string1 = String(data: response.data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
                 self.loadMessage.text = string1
 
-                self.state = .ready(try JSONDecoder().decode([Car].self, from: response.data))
+                self.state = .ready(try JSONDecoder().decode([Rent].self, from: response.data))
 
             } catch {
               self.state = .error
@@ -58,29 +57,20 @@ class CarTableViewController: UIViewController {
             self.state = .error
           }
         }
-        carTableView.reloadData()
-        refreshControl.endRefreshing()
+        rentTableView.reloadData()
+        rentRefreshControl.endRefreshing()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
-        carTableView.addSubview(refreshControl)
-
-        let keychain = Keychain(service: "car-rent-cred")
-
-        let username = try? keychain.get("username")
-        let password = try? keychain.get("password")
-        let provider = MoyaProvider<CarRentService>(plugins: [CredentialsPlugin { _ -> URLCredential? in
-           return URLCredential(user: username!, password: password!, persistence: .none)
-            }
-        ])
+        rentRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        rentRefreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        rentTableView.addSubview(rentRefreshControl)
 
         state = .loading
 
-        provider.request(.cars) { [weak self] result in
+        provider.request(.unclosedRents) { [weak self] result in
           guard let self = self else { return }
 
           switch result {
@@ -88,8 +78,9 @@ class CarTableViewController: UIViewController {
             do {
                 let string1 = String(data: response.data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
                 self.loadMessage.text = string1
-                debugPrint(try JSONDecoder().decode([Car].self, from: response.data))
-                self.state = .ready(try JSONDecoder().decode([Car].self, from: response.data))
+                let rentList = try JSONDecoder().decode([Rent].self, from: response.data)
+                debugPrint("Rent list size: \(rentList.count)")
+                self.state = .ready(try JSONDecoder().decode([Rent].self, from: response.data))
 
             } catch {
               self.state = .error
@@ -102,22 +93,22 @@ class CarTableViewController: UIViewController {
     }
 }
 
-extension CarTableViewController {
+extension RentTableViewController {
   enum State {
     case loading
-    case ready([Car])
+    case ready([Rent])
     case error
   }
 }
 
 // MARK: - UITableView Delegate & Data Source
-extension CarTableViewController: UITableViewDelegate, UITableViewDataSource {
+extension RentTableViewController: UITableViewDelegate, UITableViewDataSource {
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: CarCell.reuseIdentifier, for: indexPath) as? CarCell ?? CarCell()
+    let cell = tableView.dequeueReusableCell(withIdentifier: RentCell.reuseIdentifier, for: indexPath) as? RentCell ?? RentCell()
 
     guard case .ready(let items) = state else { return cell }
 
-    cell.configureWith(car: items[indexPath.item])
+    cell.configureWith(rent: items[indexPath.item])
 
     return cell
   }
@@ -136,7 +127,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
     guard case .ready(let items) = state else { return }
 
-    let carDetailsVC = CarDetailsViewController.instantiate(car: items[indexPath.item])
-    navigationController?.pushViewController(carDetailsVC, animated: true)
+//    let rentDetailsVC = rentDetailsViewController.instantiate(rent: items[indexPath.item])
+//    navigationController?.pushViewController(rentDetailsVC, animated: true)
   }
 }

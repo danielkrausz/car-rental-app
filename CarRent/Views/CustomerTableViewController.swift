@@ -89,6 +89,11 @@ class CustomerTableViewController: UIViewController {
         customerTableView.reloadData()
         customerTableView.refreshControl?.endRefreshing()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        customerTableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

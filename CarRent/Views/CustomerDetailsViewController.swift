@@ -23,6 +23,7 @@ public let provider = MoyaProvider<CarRentService>(plugins: [CredentialsPlugin {
 
 class CustomerDetailsViewController: UIViewController {
     private var customer: Customer?
+    var delegate: CustomarDetailDelegate?
 
     @IBOutlet weak var customerProfileImage: UIImageView!
     @IBOutlet weak var customerLicenceId: UILabel!
@@ -42,7 +43,7 @@ class CustomerDetailsViewController: UIViewController {
                     debugPrint("Customer enable")
                     debugPrint(response)
                     self.customer!.enabled = true
-//                    self.customerEnabledSwitch.setOn(false, animated: true)
+                    self.delegate?.updateCellWith(customer: self.customer!)
               case .failure:
                 debugPrint("Enable Switch failed")
                 //TODO: UI ALERT
@@ -57,8 +58,7 @@ class CustomerDetailsViewController: UIViewController {
                     self.customer!.enabled = false
                     debugPrint(response)
                     debugPrint("Customer disable")
-
-//                    self.customerEnabledSwitch.setOn(true, animated: true)
+                    self.delegate?.updateCellWith(customer: self.customer!)
               case .failure:
                 debugPrint("Disable Switch failed")
                 //TODO: UI ALERT
@@ -88,6 +88,10 @@ class CustomerDetailsViewController: UIViewController {
     }
     */
 
+}
+
+protocol CustomarDetailDelegate {
+    func updateCellWith(customer: Customer)
 }
 
 extension CustomerDetailsViewController {
