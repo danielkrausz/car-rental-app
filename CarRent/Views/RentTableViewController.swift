@@ -11,21 +11,22 @@ import Moya
 import KeychainAccess
 
 class RentTableViewController: UIViewController {
-    var rentRefreshControl = UIRefreshControl()
-
+    //Connect storyboard UI components
     @IBOutlet var rentTableView: UITableView!
     @IBOutlet weak var loadMessage: UILabel!
     @IBOutlet weak var loadMessageContainer: UIView!
+    //Custom refresh control
+    var rentRefreshControl = UIRefreshControl()
     // MARK: - View State
     private var state: State = .loading {
       didSet {
         switch state {
         case .ready:
-          loadMessageContainer.isHidden = true
-          rentTableView.reloadData()
+            loadMessageContainer.isHidden = true
+            rentTableView.reloadData()
         case .loading:
-          loadMessageContainer.isHidden = false
-          loadMessage.text = "Loading rents ..."
+              loadMessageContainer.isHidden = false
+              loadMessage.text = "Loading rents ..."
         case .error:
           loadMessageContainer.isHidden = false
           loadMessage.text = """
@@ -44,7 +45,7 @@ class RentTableViewController: UIViewController {
           case .success(let response):
             do {
                 let string1 = String(data: response.data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-                self.loadMessage.text = string1
+//                self.loadMessage.text = string1
 
                 self.state = .ready(try JSONDecoder().decode([Rent].self, from: response.data))
 
@@ -63,12 +64,15 @@ class RentTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        rentTableView.delegate = self
+        rentTableView.dataSource = self
+
         rentRefreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         rentRefreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         rentTableView.addSubview(rentRefreshControl)
 
         state = .loading
-        
+
         let keychain = Keychain(service: "car-rent-cred")
 
         let username = try? keychain.get("username")
@@ -85,10 +89,9 @@ class RentTableViewController: UIViewController {
           case .success(let response):
             do {
                 let string1 = String(data: response.data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-                self.loadMessage.text = string1
+//                self.loadMessage.text = string1
                 let rentList = try JSONDecoder().decode([Rent].self, from: response.data)
-                debugPrint("Rent list size: \(rentList.count)")
-                self.state = .ready(try JSONDecoder().decode([Rent].self, from: response.data))
+                self.state = .ready(rentList)
 
             } catch {
               self.state = .error
@@ -117,12 +120,13 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     guard case .ready(let items) = state else { return cell }
 
     cell.configureWith(rent: items[indexPath.item])
-
+    debugPrint(cell)
     return cell
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     guard case .ready(let items) = state else { return 0 }
+    debugPrint(items.count)
     return items.count
   }
 

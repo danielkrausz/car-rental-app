@@ -132,15 +132,15 @@
 		2909029C235D22800083B860 /* CarRent */ = {
 			isa = PBXGroup;
 			children = (
-				297ADE442365199B001C4876 /* Network */,
+				290902AB235D22870083B860 /* Info.plist */,
 				2909029D235D22800083B860 /* AppDelegate.swift */,
 				2909029F235D22800083B860 /* SceneDelegate.swift */,
-				290902A3235D22800083B860 /* Main.storyboard */,
-				29BB0C6D2366266A00159218 /* Models */,
-				29BB0C7023662A8900159218 /* Views */,
 				290902A6235D22870083B860 /* Assets.xcassets */,
 				290902A8235D22870083B860 /* LaunchScreen.storyboard */,
-				290902AB235D22870083B860 /* Info.plist */,
+				290902A3235D22800083B860 /* Main.storyboard */,
+				29BB0C6D2366266A00159218 /* Models */,
+				297ADE442365199B001C4876 /* Network */,
+				29BB0C7023662A8900159218 /* Views */,
 			);
 			path = CarRent;
 			sourceTree = "<group>";
@@ -185,13 +185,13 @@
 			isa = PBXGroup;
 			children = (
 				29BB0C7123662A9700159218 /* Cells */,
-				29399C2423857048003CFB62 /* CarRegisterViewController.swift */,
-				299CCDF02379651800A37D0A /* CustomerDetailsViewController.swift */,
 				29096E702382BBBF00F50789 /* CarDetailsViewController.swift */,
-				292DCB66238B63C100E7D94D /* RentTableViewController.swift */,
-				290902A1235D22800083B860 /* LoginViewController.swift */,
-				29BB0C7223662B6900159218 /* CustomerTableViewController.swift */,
+				29399C2423857048003CFB62 /* CarRegisterViewController.swift */,
 				2963B16423829A07004D1549 /* CarTableViewController.swift */,
+				299CCDF02379651800A37D0A /* CustomerDetailsViewController.swift */,
+				29BB0C7223662B6900159218 /* CustomerTableViewController.swift */,
+				290902A1235D22800083B860 /* LoginViewController.swift */,
+				292DCB66238B63C100E7D94D /* RentTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -85,11 +85,7 @@ class CarTableViewController: UIViewController {
           switch result {
           case .success(let response):
             do {
-                let string1 = String(data: response.data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-                self.loadMessage.text = string1
-                debugPrint(try JSONDecoder().decode([Car].self, from: response.data))
                 self.state = .ready(try JSONDecoder().decode([Car].self, from: response.data))
-
             } catch {
               self.state = .error
                 debugPrint(error)
