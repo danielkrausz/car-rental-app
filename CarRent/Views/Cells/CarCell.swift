@@ -10,7 +10,7 @@ import UIKit
 
 class CarCell: UITableViewCell {
     @IBOutlet weak var carModelLbl: UILabel!
-    @IBOutlet weak var currentKmLbl: UILabel!
+    @IBOutlet weak var carStateLbl: UILabel!
     @IBOutlet weak var carColorLbl: UILabel!
     @IBOutlet weak var engineTypeImg: UIImageView!
     public static let reuseIdentifier = "CarCell"
@@ -29,7 +29,7 @@ class CarCell: UITableViewCell {
     public func configureWith(car: Car) {
         carModelLbl.text = "\(car.brand) \(car.model)"
         carColorLbl.text = "\(car.color)"
-        currentKmLbl.text = "\(car.currentKm)"
+        carStateLbl.text = "\(car.state)"
         switch car.engineType {
         case "ELECTRIC":
             engineTypeImg.image = UIImage(named: "electric")

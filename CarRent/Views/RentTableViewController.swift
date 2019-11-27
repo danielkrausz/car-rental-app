@@ -11,6 +11,7 @@ import Moya
 import KeychainAccess
 
 class RentTableViewController: UIViewController {
+    var loadRentsIndicator = LoadIndicator()
     //Connect storyboard UI components
     @IBOutlet var rentTableView: UITableView!
     @IBOutlet weak var loadMessage: UILabel!
@@ -44,13 +45,9 @@ class RentTableViewController: UIViewController {
           switch result {
           case .success(let response):
             do {
-                let string1 = String(data: response.data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-//                self.loadMessage.text = string1
-
                 self.state = .ready(try JSONDecoder().decode([Rent].self, from: response.data))
-
             } catch {
-              self.state = .error
+                self.state = .error
                 debugPrint(error)
             }
           case .failure:
@@ -81,18 +78,15 @@ class RentTableViewController: UIViewController {
            return URLCredential(user: username!, password: password!, persistence: .none)
             }
         ])
-
+        loadRentsIndicator.displayActivityIndicatorAlert()
         provider.request(.unclosedRents) { [weak self] result in
           guard let self = self else { return }
 
           switch result {
           case .success(let response):
             do {
-                let string1 = String(data: response.data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
-//                self.loadMessage.text = string1
                 let rentList = try JSONDecoder().decode([Rent].self, from: response.data)
                 self.state = .ready(rentList)
-
             } catch {
               self.state = .error
                 debugPrint(error)
@@ -101,6 +95,7 @@ class RentTableViewController: UIViewController {
             self.state = .error
           }
         }
+        loadRentsIndicator.dismissActivityIndicatorAlert()
     }
 }
 
@@ -139,7 +134,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
     guard case .ready(let items) = state else { return }
 
-//    let rentDetailsVC = rentDetailsViewController.instantiate(rent: items[indexPath.item])
-//    navigationController?.pushViewController(rentDetailsVC, animated: true)
+    let rentDetailsVC = RentDetailsViewController.instantiate(rent: items[indexPath.item])
+    navigationController?.pushViewController(rentDetailsVC, animated: true)
   }
 }

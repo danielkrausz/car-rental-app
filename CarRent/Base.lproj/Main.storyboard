@@ -484,7 +484,7 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="currentKm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-W7-6DJ" userLabel="currentKmLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="currentKm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-W7-6DJ" userLabel="currentStateLbl">
                                                     <rect key="frame" x="261.5" y="0.0" width="52.5" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -507,7 +507,7 @@
                                 <connections>
                                     <outlet property="carColorLbl" destination="THL-Cg-8fJ" id="TVe-kq-96E"/>
                                     <outlet property="carModelLbl" destination="Vx8-Ba-2Lw" id="hsV-2S-EIw"/>
-                                    <outlet property="currentKmLbl" destination="XGN-W7-6DJ" id="xhu-Bc-eaO"/>
+                                    <outlet property="carStateLbl" destination="XGN-W7-6DJ" id="xhu-Bc-eaO"/>
                                     <outlet property="engineTypeImg" destination="jul-Zo-e6L" id="2Xe-Ds-qhN"/>
                                 </connections>
                             </tableViewCell>
@@ -518,11 +518,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cars" id="OoP-67-v21">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GoR-HM-ZJ7">
-                            <connections>
-                                <segue destination="Yda-tj-yqK" kind="presentation" id="6oI-p0-fPq"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GoR-HM-ZJ7"/>
                     </navigationItem>
                     <connections>
                         <outlet property="carTableView" destination="S5J-I7-hcJ" id="3gb-x8-LvC"/>
@@ -660,11 +656,11 @@
             <objects>
                 <viewController id="Yda-tj-yqK" customClass="CarRegisterViewController" customModule="CarRent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YLN-5T-ind">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HsW-Wq-Aye">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Register a car" id="mW6-N2-RVc">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ffr-Cj-XRv">
@@ -681,7 +677,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXP-c7-Oc3">
-                                <rect key="frame" x="20" y="128" width="335" height="391"/>
+                                <rect key="frame" x="20" y="148" width="335" height="391"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brand" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjL-am-5Ln">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
@@ -764,6 +760,7 @@
                         <outlet property="mileageTextField" destination="jUr-Pa-wTh" id="nJy-wB-deC"/>
                         <outlet property="modelTextField" destination="Sf8-1x-rFe" id="TAt-Uw-Kwx"/>
                         <outlet property="priceTextField" destination="yn9-BT-OlX" id="0Ml-MX-nGg"/>
+                        <outlet property="registerCarFormStackView" destination="WXP-c7-Oc3" id="T0x-Jd-tat"/>
                         <outlet property="stationTextField" destination="AVa-25-Kop" id="hGL-4F-I2R"/>
                     </connections>
                 </viewController>
@@ -942,7 +939,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCg-IQ-a7C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4240.8000000000002" y="939.58020989505258"/>
+            <point key="canvasLocation" x="4260" y="1331"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jJH-eW-5D6">
@@ -999,7 +996,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Y0-sP-BTB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3504.8000000000002" y="939.58020989505258"/>
+            <point key="canvasLocation" x="3500" y="1331"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Dz-FQ-gxq">

@@ -20,6 +20,8 @@
 		292DCB63238B532300E7D94D /* Rent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DCB62238B532300E7D94D /* Rent.swift */; };
 		292DCB65238B62C600E7D94D /* RentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DCB64238B62C600E7D94D /* RentCell.swift */; };
 		292DCB67238B63C100E7D94D /* RentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292DCB66238B63C100E7D94D /* RentTableViewController.swift */; };
+		29394228238E9CDF007A6734 /* RentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29394227238E9CDF007A6734 /* RentDetailsViewController.swift */; };
+		2939422A238EAD84007A6734 /* LoadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29394229238EAD84007A6734 /* LoadIndicator.swift */; };
 		29399C2523857048003CFB62 /* CarRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29399C2423857048003CFB62 /* CarRegisterViewController.swift */; };
 		294969DF23670D3100C0ED37 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 294969DE23670D3100C0ED37 /* KeychainAccess */; };
 		2963B163238298A4004D1549 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2963B162238298A4004D1549 /* Car.swift */; };
@@ -70,6 +72,8 @@
 		292DCB62238B532300E7D94D /* Rent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rent.swift; sourceTree = "<group>"; };
 		292DCB64238B62C600E7D94D /* RentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentCell.swift; sourceTree = "<group>"; };
 		292DCB66238B63C100E7D94D /* RentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentTableViewController.swift; sourceTree = "<group>"; };
+		29394227238E9CDF007A6734 /* RentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentDetailsViewController.swift; sourceTree = "<group>"; };
+		29394229238EAD84007A6734 /* LoadIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadIndicator.swift; sourceTree = "<group>"; };
 		29399C2423857048003CFB62 /* CarRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRegisterViewController.swift; sourceTree = "<group>"; };
 		2963B162238298A4004D1549 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		2963B16423829A07004D1549 /* CarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			children = (
 				290902AB235D22870083B860 /* Info.plist */,
 				2909029D235D22800083B860 /* AppDelegate.swift */,
+				29394229238EAD84007A6734 /* LoadIndicator.swift */,
 				2909029F235D22800083B860 /* SceneDelegate.swift */,
 				290902A6235D22870083B860 /* Assets.xcassets */,
 				290902A8235D22870083B860 /* LaunchScreen.storyboard */,
@@ -191,6 +196,7 @@
 				299CCDF02379651800A37D0A /* CustomerDetailsViewController.swift */,
 				29BB0C7223662B6900159218 /* CustomerTableViewController.swift */,
 				290902A1235D22800083B860 /* LoginViewController.swift */,
+				29394227238E9CDF007A6734 /* RentDetailsViewController.swift */,
 				292DCB66238B63C100E7D94D /* RentTableViewController.swift */,
 			);
 			path = Views;
@@ -374,7 +380,9 @@
 				290560D223661F2800DA0007 /* CustomerCell.swift in Sources */,
 				292DCB65238B62C600E7D94D /* RentCell.swift in Sources */,
 				29BB0C7323662B6900159218 /* CustomerTableViewController.swift in Sources */,
+				2939422A238EAD84007A6734 /* LoadIndicator.swift in Sources */,
 				2963B1672382A2D4004D1549 /* CarCell.swift in Sources */,
+				29394228238E9CDF007A6734 /* RentDetailsViewController.swift in Sources */,
 				292DCB67238B63C100E7D94D /* RentTableViewController.swift in Sources */,
 				2909029E235D22800083B860 /* AppDelegate.swift in Sources */,
 				29BB0C6F2366269000159218 /* Customer.swift in Sources */,
