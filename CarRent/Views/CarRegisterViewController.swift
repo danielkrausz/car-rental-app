@@ -34,10 +34,10 @@ class CarRegisterViewController: UIViewController {
         carRegistrationFormData["kmHour"] = mileageTextField.text
         carRegistrationFormData["price"] = priceTextField.text
         carRegistrationFormData["licencePlate"] = licencePlateTextField.text
-        
+
         provider.request(.registerCar(carData: carRegistrationFormData)) { [weak self] result in
             guard let self = self else { return }
-            
+
             switch result {
             case .success(let response):
                 do {

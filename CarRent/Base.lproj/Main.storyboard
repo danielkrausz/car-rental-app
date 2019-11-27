@@ -518,7 +518,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cars" id="OoP-67-v21">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GoR-HM-ZJ7"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GoR-HM-ZJ7">
+                            <connections>
+                                <segue destination="Yda-tj-yqK" kind="presentation" id="Cub-4b-p9A"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="carTableView" destination="S5J-I7-hcJ" id="3gb-x8-LvC"/>
@@ -656,11 +660,11 @@
             <objects>
                 <viewController id="Yda-tj-yqK" customClass="CarRegisterViewController" customModule="CarRent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YLN-5T-ind">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HsW-Wq-Aye">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <items>
                                     <navigationItem title="Register a car" id="mW6-N2-RVc">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ffr-Cj-XRv">
@@ -677,12 +681,12 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXP-c7-Oc3">
-                                <rect key="frame" x="20" y="148" width="335" height="391"/>
+                                <rect key="frame" x="20" y="128" width="335" height="391"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Brand" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjL-am-5Ln">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sf8-1x-rFe">
                                         <rect key="frame" x="0.0" y="51" width="335" height="34"/>
@@ -702,17 +706,17 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Licence Plate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wH1-B8-Bz5">
                                         <rect key="frame" x="0.0" y="204" width="335" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mileage (km)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUr-Pa-wTh">
                                         <rect key="frame" x="0.0" y="255" width="335" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price ($)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yn9-BT-OlX">
                                         <rect key="frame" x="0.0" y="306" width="335" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Station" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AVa-25-Kop">
                                         <rect key="frame" x="0.0" y="357" width="335" height="34"/>
@@ -760,7 +764,6 @@
                         <outlet property="mileageTextField" destination="jUr-Pa-wTh" id="nJy-wB-deC"/>
                         <outlet property="modelTextField" destination="Sf8-1x-rFe" id="TAt-Uw-Kwx"/>
                         <outlet property="priceTextField" destination="yn9-BT-OlX" id="0Ml-MX-nGg"/>
-                        <outlet property="registerCarFormStackView" destination="WXP-c7-Oc3" id="T0x-Jd-tat"/>
                         <outlet property="stationTextField" destination="AVa-25-Kop" id="hGL-4F-I2R"/>
                     </connections>
                 </viewController>
