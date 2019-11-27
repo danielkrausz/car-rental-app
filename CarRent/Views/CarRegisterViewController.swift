@@ -9,7 +9,7 @@
 import UIKit
 
 class CarRegisterViewController: UIViewController {
-    var carRegistrationFormData: [String: Any] = [:]
+    var carRegistrationFormData: [String: String] = [:]
     var stationPicker = UIPickerView()
     var engineTypePicker = UIPickerView()
 
@@ -27,13 +27,28 @@ class CarRegisterViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func saveCarRegistration(_ sender: Any) {
+        //Set key value pairs
         carRegistrationFormData["brand"] = brandTextField.text
         carRegistrationFormData["model"] = modelTextField.text
         carRegistrationFormData["color"] = colorTextField.text
         carRegistrationFormData["kmHour"] = mileageTextField.text
         carRegistrationFormData["price"] = priceTextField.text
         carRegistrationFormData["licencePlate"] = licencePlateTextField.text
-        debugPrint(carRegistrationFormData)
+        
+        provider.request(.registerCar(carData: carRegistrationFormData)) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let response):
+                do {
+                    self.dismiss(animated: true, completion: nil)
+                } catch {
+                    debugPrint(error)
+                }
+            case .failure:
+                debugPrint(Error.self)
+            }
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +89,7 @@ extension CarRegisterViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == stationPicker {
              stationTextField.text = stationList[row]
-            carRegistrationFormData["stationId"] = pickerView.selectedRow(inComponent: 0)
+            carRegistrationFormData["stationId"] = String(pickerView.selectedRow(inComponent: 0))
         } else if pickerView == engineTypePicker {
             engineTypeTextField.text = engineTypeList[row]
             carRegistrationFormData["engineType"] = engineTypeList[row]
