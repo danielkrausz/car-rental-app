@@ -54,7 +54,7 @@ extension CarDetailsViewController {
         locationAnnotation.coordinate = CLLocationCoordinate2D(latitude: car.station.latitude, longitude: car.station.longitude)
         locationAnnotation.title = "\(car.brand) \(car.model)"
         carLocationMapView.addAnnotation(locationAnnotation)
-        centerMapOnLocation(locationAnnotation.coordinate, mapView: carLocationMapView)
+        Helper.centerMapOnLocation(locationAnnotation.coordinate, mapView: carLocationMapView)
 
     }
 
@@ -68,12 +68,4 @@ extension CarDetailsViewController {
 
       return carDetailsVC
     }
-
-    func centerMapOnLocation(_ location: CLLocationCoordinate2D, mapView: MKMapView) {
-        let regionRadius: CLLocationDistance = 1000
-        let coordinateRegion = MKCoordinateRegion(center: location,
-                                                  latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
-        mapView.setRegion(coordinateRegion, animated: true)
-    }
-
 }

@@ -653,7 +653,135 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CoV-Z6-dDN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2680.8000000000002" y="1721.2893553223389"/>
+            <point key="canvasLocation" x="2681" y="1818"/>
+        </scene>
+        <!--Rent Details View Controller-->
+        <scene sceneID="rKj-gR-Jmb">
+            <objects>
+                <viewController storyboardIdentifier="RentDetailsViewController" id="po6-49-dlC" customClass="RentDetailsViewController" customModule="CarRent" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="siU-Us-5Ae">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="kFj-EK-tfo">
+                                <rect key="frame" x="10" y="94" width="355" height="146"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8zN-nY-3oS">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="48.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CarName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsv-Wf-dOS">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CarState" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-pV-89s">
+                                                <rect key="frame" x="0.0" y="28" width="355" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="148" translatesAutoresizingMaskIntoConstraints="NO" id="Ke1-Wu-zJS">
+                                        <rect key="frame" x="0.0" y="60.5" width="355" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StartStation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ0-2B-OkB">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StartDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slP-Jk-ytO">
+                                                <rect key="frame" x="281" y="0.0" width="74" height="20.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="74" id="zFr-u8-pAl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="165" translatesAutoresizingMaskIntoConstraints="NO" id="qq4-r7-uNx">
+                                        <rect key="frame" x="0.0" y="93" width="355" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EndStation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeV-eq-xt4">
+                                                <rect key="frame" x="0.0" y="0.0" width="124.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EndDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2Z-GQ-S6Z">
+                                                <rect key="frame" x="289.5" y="0.0" width="65.5" height="20.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65.5" id="FVz-eV-ueO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="165" translatesAutoresizingMaskIntoConstraints="NO" id="Qe0-wE-1DH">
+                                        <rect key="frame" x="0.0" y="125.5" width="355" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LastLocationDate" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHK-wV-5hm">
+                                                <rect key="frame" x="0.0" y="0.0" width="126" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2w-X2-Uae">
+                                                <rect key="frame" x="291" y="0.0" width="64" height="20.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="64" id="CLS-Of-ZJZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1a-Ae-lgS">
+                                <rect key="frame" x="93" y="273" width="188" height="42"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Request location"/>
+                                <connections>
+                                    <action selector="sendLocRequest:" destination="po6-49-dlC" eventType="touchUpInside" id="1nf-ub-OJL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="u1a-Ae-lgS" firstAttribute="top" secondItem="kFj-EK-tfo" secondAttribute="bottom" constant="33" id="B52-BN-kwG"/>
+                            <constraint firstItem="kFj-EK-tfo" firstAttribute="top" secondItem="0ez-OB-s9M" secondAttribute="top" constant="50" id="TP2-uz-3b7"/>
+                            <constraint firstItem="0ez-OB-s9M" firstAttribute="trailing" secondItem="kFj-EK-tfo" secondAttribute="trailing" constant="10" id="WGX-VE-TxR"/>
+                            <constraint firstItem="kFj-EK-tfo" firstAttribute="centerX" secondItem="u1a-Ae-lgS" secondAttribute="centerX" id="ZdC-gK-IJe"/>
+                            <constraint firstItem="u1a-Ae-lgS" firstAttribute="leading" secondItem="0ez-OB-s9M" secondAttribute="leading" constant="93" id="tt2-sa-qLI"/>
+                            <constraint firstItem="kFj-EK-tfo" firstAttribute="leading" secondItem="0ez-OB-s9M" secondAttribute="leading" constant="10" id="wKH-15-7oi"/>
+                            <constraint firstItem="0ez-OB-s9M" firstAttribute="bottom" secondItem="u1a-Ae-lgS" secondAttribute="bottom" constant="352" id="zvZ-bi-aqA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0ez-OB-s9M"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rEx-6E-jcp"/>
+                    <connections>
+                        <outlet property="carNameLbl" destination="fsv-Wf-dOS" id="Dj0-Yo-0lO"/>
+                        <outlet property="carStateLbl" destination="QfH-pV-89s" id="0T4-6D-9rd"/>
+                        <outlet property="endDateLbl" destination="F2Z-GQ-S6Z" id="LlD-3i-e08"/>
+                        <outlet property="endStationLbl" destination="XeV-eq-xt4" id="c9L-hK-5iw"/>
+                        <outlet property="locDateLbl" destination="Z2w-X2-Uae" id="wbB-oH-8Id"/>
+                        <outlet property="startDateLbl" destination="slP-Jk-ytO" id="31O-yu-2VC"/>
+                        <outlet property="startStationLbl" destination="bZ0-2B-OkB" id="aTp-8j-JzQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qS8-CA-MXE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3616.8000000000002" y="2495.8020989505249"/>
         </scene>
         <!--Car Register View Controller-->
         <scene sceneID="bDR-yG-vbY">
@@ -1023,7 +1151,7 @@
         <scene sceneID="NPH-HA-uuJ">
             <objects>
                 <navigationController title="RentNavController" automaticallyAdjustsScrollViewInsets="NO" id="p5p-G9-YO5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rents" image="doc.fill" catalog="system" id="f8l-Bf-KXN"/>
+                    <tabBarItem key="tabBarItem" title="Rents" image="book.fill" catalog="system" id="f8l-Bf-KXN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p8v-aL-jyI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
@@ -1036,12 +1164,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rg-fb-S45" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769" y="1722"/>
+            <point key="canvasLocation" x="1769" y="1818"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TaC-b1-26R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LfH-xO-E6Q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pqt-YD-7BK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="po6-49-dlC" kind="relationship" relationship="rootViewController" id="H3o-JP-aqv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cb7-ab-Use" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2677.5999999999999" y="2495.8020989505249"/>
         </scene>
     </scenes>
     <resources>
+        <image name="book.fill" catalog="system" width="64" height="50"/>
         <image name="car.fill" catalog="system" width="64" height="46"/>
-        <image name="doc.fill" catalog="system" width="56" height="64"/>
         <image name="person.3.fill" catalog="system" width="71" height="34"/>
     </resources>
     <inferredMetricsTieBreakers>

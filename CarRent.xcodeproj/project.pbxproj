@@ -33,6 +33,9 @@
 		299CCDF12379651800A37D0A /* CustomerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299CCDF02379651800A37D0A /* CustomerDetailsViewController.swift */; };
 		29BB0C6F2366269000159218 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB0C6E2366269000159218 /* Customer.swift */; };
 		29BB0C7323662B6900159218 /* CustomerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BB0C7223662B6900159218 /* CustomerTableViewController.swift */; };
+		29E47764239496950001FA23 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E47763239496950001FA23 /* Station.swift */; };
+		29E477662394B4B30001FA23 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E477652394B4B30001FA23 /* Helper.swift */; };
+		29E477682394B6FA0001FA23 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E477672394B6FA0001FA23 /* Position.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		299CCDF02379651800A37D0A /* CustomerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsViewController.swift; sourceTree = "<group>"; };
 		29BB0C6E2366269000159218 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		29BB0C7223662B6900159218 /* CustomerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewController.swift; sourceTree = "<group>"; };
+		29E47763239496950001FA23 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		29E477652394B4B30001FA23 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = CarRent/Helper.swift; sourceTree = SOURCE_ROOT; };
+		29E477672394B6FA0001FA23 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				290902AB235D22870083B860 /* Info.plist */,
+				29E477652394B4B30001FA23 /* Helper.swift */,
 				2909029D235D22800083B860 /* AppDelegate.swift */,
 				29394229238EAD84007A6734 /* LoadIndicator.swift */,
 				2909029F235D22800083B860 /* SceneDelegate.swift */,
@@ -179,9 +186,11 @@
 		29BB0C6D2366266A00159218 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29E47763239496950001FA23 /* Station.swift */,
 				29BB0C6E2366269000159218 /* Customer.swift */,
 				2963B162238298A4004D1549 /* Car.swift */,
 				292DCB62238B532300E7D94D /* Rent.swift */,
+				29E477672394B6FA0001FA23 /* Position.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,11 +389,14 @@
 				290560D223661F2800DA0007 /* CustomerCell.swift in Sources */,
 				292DCB65238B62C600E7D94D /* RentCell.swift in Sources */,
 				29BB0C7323662B6900159218 /* CustomerTableViewController.swift in Sources */,
+				29E477662394B4B30001FA23 /* Helper.swift in Sources */,
 				2939422A238EAD84007A6734 /* LoadIndicator.swift in Sources */,
 				2963B1672382A2D4004D1549 /* CarCell.swift in Sources */,
 				29394228238E9CDF007A6734 /* RentDetailsViewController.swift in Sources */,
+				29E47764239496950001FA23 /* Station.swift in Sources */,
 				292DCB67238B63C100E7D94D /* RentTableViewController.swift in Sources */,
 				2909029E235D22800083B860 /* AppDelegate.swift in Sources */,
+				29E477682394B6FA0001FA23 /* Position.swift in Sources */,
 				29BB0C6F2366269000159218 /* Customer.swift in Sources */,
 				29096E712382BBBF00F50789 /* CarDetailsViewController.swift in Sources */,
 				299CCDF12379651800A37D0A /* CustomerDetailsViewController.swift in Sources */,

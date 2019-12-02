@@ -14,11 +14,16 @@ struct Rent: Codable {
     var plannedStartTime: String
     var plannedEndTime: String
     var startStationId: Int
+    var startStationName: String
+    var endStationName: String
     var endStationId: Int
     var actualStartTime: String
     var actualEndTime: String
     var state: String
     var mine: Bool
-//    var imageIdsBefore: [Int]
-//    var imageIdsAfter: [Int]
+    var carModel: String
+    var carBrand: String
+//    var positions: [Position]
+    var imageIdsBefore: [Int]
+    var imageIdsAfter: [Int]
 }

@@ -20,10 +20,3 @@ public struct Car: Codable {
     var currentKm: Double
     var station: Station
 }
-
-struct Station: Codable {
-    var stationId: Int
-    var latitude: Double
-    var longitude: Double
-    var name: String
-}
