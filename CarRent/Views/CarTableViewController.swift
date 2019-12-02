@@ -79,6 +79,25 @@ class CarTableViewController: UIViewController {
 
         state = .loading
 
+        provider.request(.carStates) { [weak self] result in
+          guard let self = self else { return }
+
+          switch result {
+          case .success(let response):
+            do {
+                let defaults = UserDefaults.standard
+                let carStates = try JSONDecoder().decode([String].self, from: response.data)
+                defaults.set(carStates, forKey: "CarStates")
+
+            } catch {
+              self.state = .error
+                debugPrint(error)
+            }
+          case .failure:
+            self.state = .error
+          }
+        }
+
         provider.request(.cars) { [weak self] result in
           guard let self = self else { return }
 

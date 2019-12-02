@@ -16,4 +16,5 @@ class Helper {
                                                   latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+
 }

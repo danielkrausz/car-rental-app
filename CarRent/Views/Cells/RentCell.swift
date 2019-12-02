@@ -30,8 +30,11 @@ class RentCell: UITableViewCell {
         startStationNameLbl.text = String(rent.startStationId)
         endStationNameLbl.text = String(rent.endStationId)
         startDateLbl.text = rent.actualStartTime
-        endDateLbl.text = rent.actualEndTime
-        debugPrint("\(startStationNameLbl.text) || \(endStationNameLbl.text) || \(startDateLbl.text) || \(endDateLbl.text)")
+        if rent.state == "RENTED" {
+            endDateLbl.text = "Waiting for return"
+        } else {
+            endDateLbl.text = rent.actualEndTime
+        }
     }
 
 }

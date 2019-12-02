@@ -12,6 +12,13 @@ import MapKit
 class CarDetailsViewController: UIViewController {
     private var car: Car?
 
+    var carRegistrationFormData: [String: String] = [:]
+    var stationPicker = UIPickerView()
+    var carStatePicker = UIPickerView()
+
+    let stationList = [String](arrayLiteral: "Station 1", "Station 2", "Station 3")
+    var carStatesList = [String]()
+
     @IBOutlet weak var carPriceLbl: UILabel!
     @IBOutlet weak var carModelTitle: UINavigationItem!
     @IBOutlet weak var licencePlateLbl: UILabel!
@@ -19,10 +26,23 @@ class CarDetailsViewController: UIViewController {
     @IBOutlet weak var currentKmLbl: UILabel!
     @IBOutlet weak var engineTypeImg: UIImageView!
     @IBOutlet weak var carLocationMapView: MKMapView!
-    @IBOutlet weak var stationNameLbl: UILabel!
+    @IBOutlet weak var stationNameLbl: UITextField!
+    @IBOutlet weak var carStateLbl: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let defaults = UserDefaults.standard
+        carStatesList = defaults.object(forKey: "CarStates") as? [String] ?? [String]()
+
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        //Init picker views
+        stationNameLbl.inputView = stationPicker
+        carStateLbl.inputView = carStatePicker
+        stationPicker.delegate = self
+        carStatePicker.delegate = self
 
         guard let car = car else { fatalError("Please pass in a valid Customer object") }
 
@@ -38,6 +58,7 @@ extension CarDetailsViewController {
         currentKmLbl.text = "\(car.currentKm) km"
         licencePlateLbl.text = "\(car.licencePlate)"
         stationNameLbl.text = "\(car.station.name)"
+        carStateLbl.text = "\(car.state)"
 
         switch car.engineType {
         case "ELECTRIC":
@@ -67,5 +88,38 @@ extension CarDetailsViewController {
       carDetailsVC.car = car
 
       return carDetailsVC
+    }
+}
+
+extension CarDetailsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView( _ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == stationPicker {
+            return stationList.count
+        } else if pickerView == carStatePicker {
+            return carStatesList.count
+        }
+        return -1
+    }
+
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == stationPicker {
+            return stationList[row]
+        } else if pickerView == carStatePicker {
+            return carStatesList[row]
+        }
+        return "Error"
+    }
+
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == stationPicker {
+             stationNameLbl.text = stationList[row]
+            carRegistrationFormData["stationId"] = String(pickerView.selectedRow(inComponent: 0))
+        } else if pickerView == carStatePicker {
+            carStateLbl.text = carStatesList[row]
+            carRegistrationFormData["state"] = carStatesList[row]
+        }
     }
 }

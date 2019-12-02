@@ -10,6 +10,6 @@ import Foundation
 
 struct Position: Codable {
     var longitude: Double
-    var laltitude: Double
+    var latitude: Double
     var reportedTime: String
 }

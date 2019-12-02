@@ -10,6 +10,8 @@ import Foundation
 import Moya
 
 public enum CarRentService {
+    //metadata endpoints
+    case carStates
     //customer endpoints
     case login
     case customers
@@ -38,6 +40,7 @@ extension CarRentService: TargetType {
   // 2
   public var path: String {
     switch self {
+    case .carStates: return "/info/values/car-states/"
     case .login: return "/login/admin/"
     case .customers: return "/customers/"
     case .enable(let customerId): return "/register/accept/\(customerId)"
@@ -47,7 +50,7 @@ extension CarRentService: TargetType {
     case .registerCar: return "/cars/register/"
     case .stations: return "/stations/"
     case .unclosedRents: return "/rents/unclosed"
-    case .activeRents: return "/rents/unclosed"
+    case .activeRents: return "/rents/active"
     case .acceptRent(let rentId): return "/rents/\(rentId)/accept"
     case .requestPosition(let rentId): return "/rents/\(rentId)/request-position"
     }
@@ -56,7 +59,7 @@ extension CarRentService: TargetType {
   // 3
   public var method: Moya.Method {
     switch self {
-    case .login, .customers, .image, .cars, .stations, .unclosedRents, .activeRents: return .get
+    case .carStates, .login, .customers, .image, .cars, .stations, .unclosedRents, .activeRents: return .get
     case .enable, .disable, .registerCar, .acceptRent, .requestPosition: return .post
     }
   }
@@ -68,7 +71,8 @@ extension CarRentService: TargetType {
   // 5
   public var task: Task {
     switch self {
-    case .login, .customers, .enable, .disable, .image, .cars, .stations, .unclosedRents, .activeRents, .acceptRent, .requestPosition:
+    // swiftlint:disable:next line_length
+    case .carStates, .login, .customers, .enable, .disable, .image, .cars, .stations, .unclosedRents, .activeRents, .acceptRent, .requestPosition:
         return .requestPlain
     case .registerCar(let carData):
         var multipartData = [MultipartFormData]()
