@@ -1,12 +1,10 @@
 # Autóbérlő alkalmazás iOS admin kliens dokumentácó
 
 ### Témalabor(BMEVIAUAL00) - Csapat: Pénzfeldobás
-### Krausz Dániel - JPYEL5
-
 
 ## Leírás
 
-A feladat egy autó bérlő rendszerhez tartozó kliens megvalósítása volt, amelyben a rendszer adminisztrátorós feladatait képes ellátni. Ezek közé tartozik a regisztrált felhasználók listázása, elfogadása, beérkező bérlések és az autók kezelés, az egyes autók pozíciójának lekérdezése.
+A feladat egy autó bérlő rendszerhez tartozó kliens megvalósítása volt, amely a rendszer adminisztrációs feladatait képes ellátni. Ezek közé tartozik a regisztrált felhasználók listázása, elfogadása, beérkező bérlések és az autók kezelés, az egyes autók pozíciójának lekérdezése.
 Előbbiek megvalósításához szükséges volt a csapatfeladat részeként megvalósított backend szolgáltatásokkal való együttműködés is. Az alkalmazás iOS 13 platformra készült el, Swift 5.1 nyelven írdóva.
 
 ## Architektúra
